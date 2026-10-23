@@ -1,0 +1,15 @@
+//#include "RootInterface/MetaData.h"
+#include "MetaData.h"
+#include <iostream>
+
+ClassImp(MetaData);
+
+void MetaData :: Print () {
+  std::cout << "------------------------ Metadata --------------------------" << std::endl;
+  int index = 0;
+  for (std::map<std::string, std::string>::value_type itr : Map) {
+    std::cout << index << ") " << itr.first << " => " << itr.second << std::endl;
+    ++index;
+  }
+  std::cout << "------------------------------------------------------------" << std::endl;
+}

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# 辞書生成
+rootcling -f MetaDataDict.cpp -c MetaData.h LinkDef.h
+
+# 共有ライブラリ作成
+g++ -shared -fPIC MetaData.cxx MetaDataDict.cpp -o libMetaData.so `root-config --cflags --libs`
